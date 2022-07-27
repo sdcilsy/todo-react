@@ -1,5 +1,10 @@
 pipeline {
-  agent {docker {image 'node:14-alpine' args '-u root --privileged'}}
+  agent {
+    docker {
+      image 'node:14-alpine' 
+      args '-u root --privileged'
+    }
+  }
   stages {
     stage('build app') {
       agent {
@@ -15,7 +20,7 @@ pipeline {
     stage ('test app') {
       agent {
         docker {
-          image 'node:14-alpine' 
+          image 'node:15-alpine' 
           args '-u root --privileged'
           }
         }
@@ -26,7 +31,7 @@ pipeline {
     stage ('package app') {
       agent {
         docker {
-          image 'node:14-alpine' 
+          image 'node:15-alpine' 
           args '-u root --privileged'
           }
         }
