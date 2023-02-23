@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  coba-todo:
+    image: todo
+    ports:
+      - 3000:3000
